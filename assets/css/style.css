@@ -1,0 +1,337 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(270deg, 20%, 96%);
+  overflow-x: hidden;
+  font-family: Rubik, sans-serif;
+  z-index: -1000;
+}
+
+@media screen and (min-width: 769px) {
+  body {
+    flex-direction: row;
+  }
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: -60%;
+  height: 75%;
+  width: 110%;
+  background: linear-gradient(180deg, hsl(293deg, 100%, 63%), hsl(264deg, 100%, 61%) 95%);
+  border-radius: 0 0 50% 50%;
+  z-index: -999;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  right: -60%;
+  height: 75%;
+  width: 110%;
+  background: hsla(293deg, 100%, 63%, 0.05);
+  border-radius: 50% 50% 0 0;
+  z-index: -999;
+}
+
+@media screen and (min-width: 769px) {
+  body::before {
+    left: -10%;
+    height: 85%;
+    width: 35%;
+  }
+
+  body::after {
+    right: -15%;
+    height: 85%;
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .body__phone {
+    width: 50%;
+    padding-left: 3rem;
+    height: 100%;
+  }
+}
+
+.body__text {
+  text-align: center;
+  margin: 1rem;
+}
+
+@media screen and (min-width: 769px) {
+  .body__text {
+    padding-left: 1rem;
+    text-align: left;
+    width: 50%;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}
+
+.body__text h2 {
+  margin-top: 4rem;
+  font-family: sans-serif;
+  color: hsl(271deg, 36%, 24%);
+  font-size: 2.25rem;
+}
+
+.body__text p {
+  margin-top: 2rem;
+  color: hsl(270deg, 7%, 64%);
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  line-height: 1.9rem;
+}
+
+@media screen and (min-width: 769px) {
+  .body__text h2 {
+    margin-top: 0;
+    font-size: 2.45rem;
+  }
+
+  .body__text p {
+    font-size: 1rem;
+    max-width: 75%;
+  }
+}
+
+.phone {
+  max-width: 315px;
+  background-color: hsl(270deg, 20%, 96%);
+  border: 10px solid #ffffff;
+  border-radius: 1.75rem;
+  box-shadow: 10px 5px 10px hsl(260, 7%, 92%);
+}
+
+@media screen and (min-width: 769px) {
+  .phone {
+    margin: auto 7.85rem auto auto;
+  }
+}
+
+.phone__header {
+  width: 100%;
+  height: 90px;
+  background-image: linear-gradient(90deg, hsl(264deg, 100%, 61%), hsl(293deg, 100%, 63%));
+  border-radius: 1.25rem 1.25rem 5px 5px;
+  border: none;
+  margin-bottom: 0.75rem;
+}
+
+.phone__header__top {
+  background-color: white;
+  height: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 55%;
+  border-bottom-left-radius: 1.25rem;
+  border-bottom-right-radius: 1.25rem;
+}
+
+.phone__header__ui {
+  display: flex;
+  margin: 0.75rem 0.5rem;
+  align-items: center;
+}
+
+.phone__header__ui * {
+  margin-left: 0.5rem !important;
+}
+
+.phone__header__ui img {
+  height: 30px;
+  border-radius: 50%;
+  border: solid #ffffff 2px;
+  display: inline-block;
+  margin: 0;
+}
+
+.phone__header__back {
+  width: 5px;
+  height: 5px;
+  border-style: solid;
+  border-color: #ffffff;
+  border-top: 2px;
+  border-left: 2px;
+  transform: rotate(135deg);
+}
+
+.phone__header__user-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.phone__header__user-data h3 {
+  margin: 0 !important;
+  font-size: 0.95rem !important;
+  font-family: sans-serif;
+  color: #ffffff;
+  margin-bottom: 0.25rem !important;
+}
+
+.phone__header__user-data p {
+  font-size: 0.65rem !important;
+  font-family: sans-serif;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 !important;
+}
+
+.phone__header__options {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: auto !important;
+  margin-right: 0.5rem;
+}
+
+.phone__header__options span {
+  display: inline-block;
+  width: 2px;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.6);
+  margin: 0.05rem auto;
+}
+
+.chat {
+  margin: 0.7rem;
+  width: fit-content;
+  font-family: sans-serif;
+  max-width: 55%;
+  font-size: 0.65rem;
+  padding: 0.55rem;
+  line-height: 0.85rem;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1882352941);
+}
+
+.chat-img {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 0.7rem;
+  width: fit-content;
+  margin-left: auto;
+  min-width: 70%;
+  font-size: 0.65rem;
+}
+
+.chat-img img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.6rem;
+  margin-left: 0.75rem;
+}
+
+.chat-left {
+  background-color: #ede5f4;
+  color: hsl(276deg, 55%, 52%);
+  border-radius: 1rem 1rem 1rem 5px;
+}
+
+.chat-left-pay {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #ede5f4;
+  color: hsl(0deg, 0%, 100%);
+  border-radius: 1rem 1rem 1rem 5px;
+  background-image: linear-gradient(90deg, hsl(293deg, 100%, 63%), hsl(264deg, 100%, 61%));
+  font-weight: 300;
+  padding: 0.75rem;
+  min-width: 65%;
+}
+
+.chat-right {
+  margin-left: auto;
+  background-color: hsl(0deg, 0%, 100%);
+  color: rgba(0, 0, 0, 0.5647058824);
+  border-radius: 1rem 1rem 5px 1rem;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1882352941);
+}
+
+.m-t {
+  margin-top: 1.5rem;
+}
+
+.circle {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid hsl(0deg, 0%, 100%);
+  margin-right: 0.5rem;
+}
+
+.price {
+  display: inline-block;
+  color: hsl(0deg, 0%, 100%);
+  margin-left: auto;
+  margin-right: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.message-box {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  width: calc(100% - 1.5rem);
+  max-width: 100%;
+  background-color: hsl(0deg, 0%, 100%);
+  margin: 0.75rem;
+  height: 2.5rem;
+  border-radius: 2rem;
+}
+
+.message-box .placeholder {
+  align-self: center;
+  display: inline-block;
+  margin-left: 1.5rem;
+  color: rgba(0, 0, 0, 0.4588235294);
+  font-family: sans-serif;
+  font-size: 0.7rem;
+}
+
+.message-box .submit {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  align-items: center;
+  background-color: hsl(271deg, 36%, 24%);
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-left: auto;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.message-box .submit span {
+  display: block;
+  width: 20%;
+  height: 20%;
+  border-style: solid;
+  border-color: hsl(0deg, 0%, 100%);
+  border-top: none;
+  border-left: none;
+  transform: rotate(-45deg);
+  margin-right: 10%;
+}
